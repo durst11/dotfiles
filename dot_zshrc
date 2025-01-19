@@ -18,5 +18,6 @@ fi
 
 if [ -e /home/jeremy/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jeremy/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
-# Initialize Starship
+# Starship
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
