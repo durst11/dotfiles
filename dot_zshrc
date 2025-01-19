@@ -16,7 +16,10 @@ if [ -f ~/.aliasesrc ]; then
     source ~/.aliasesrc
 fi
 
-if [ -e /home/jeremy/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jeremy/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+# Setup for Nix package manager
+if [ -e /home/jeremy/.nix-profile/etc/profile.d/nix.sh ]; then
+    . /home/jeremy/.nix-profile/etc/profile.d/nix.sh; 
+fi # added by Nix installer
 
 # Starship
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"

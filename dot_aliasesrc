@@ -1,7 +1,4 @@
-#neofetch
-fastfetch
-
-#git
+#fastfetch
 
 # add zellij binaries to the PATH
 export PATH="/home/jeremy/.cargo/bin:$PATH"
@@ -15,9 +12,6 @@ alias mv='mv -i'          # Interactive move with confirmation prompt
 alias rm='rm -i'          # Interactive remove with confirmation prompt
 alias cp='cp -i'          # Interactive copy with confirmation prompt
 alias mkdir='mkdir -pv'   # Create directory with parent directories and verbose output
-
-
-
 
 # Changing "ls" to "eza"
 alias ls='eza -al --color=always --group-directories-first' # my preferred listing

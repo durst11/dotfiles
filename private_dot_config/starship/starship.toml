@@ -2,7 +2,13 @@
 
 # Main prompt format
 format = """
-$username$hostname$directory$git_branch$git_status
+$username\
+$hostname\
+$directory\
+$fill\
+$git_branch\
+$git_status\
+$linebreak
 $character"""
 
 # Username config
@@ -14,13 +20,16 @@ show_always = true
 [hostname]
 format = "at [$hostname]($style) "
 style = "green bold"
-ssh_only = false
+ssh_only = true
 
 [directory]
 format = "in [$path]($style)[$read_only]($read_only_style) "
-style = "cyan bold"
+style = "cyan"
+#style = "bg:#445055 fg:#D3C6AA"
 truncation_length = 3
-truncate_to_repo = true
+truncate_to_repo = false
+truncation_symbol = ".../"
+repo_root_style = "green"
 
 [character]
 success_symbol = "[❯](green bold)"
@@ -44,18 +53,10 @@ staged = "+"
 renamed = "»"
 deleted = "✘"
 
-# Optional modules - uncomment to enable
-# [python]
-# format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-# symbol = "🐍 "
-# style = "yellow bold"
+[line_break]
+disabled = false
 
-# [nodejs]
-# format = "via [${symbol}(${version} )]($style)"
-# symbol = "⬢ "
-# style = "green bold"
-
-# [rust]
-# format = "via [${symbol}(${version} )]($style)"
-# symbol = "🦀 "
-# style = "red bold"
+[python]
+format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+symbol = "🐍 "
+style = "yellow bold"
