@@ -1,0 +1,27 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=20000
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/jeremy/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+
+if [ -f ~/.aliasesrc ]; then
+    source ~/.aliasesrc
+fi
+
+# Source Nix environment
+#if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+#  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+#fi
+
+if [ -e /home/jeremy/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jeremy/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# Initialize Starship
+eval "$(starship init zsh)"
