@@ -1,0 +1,61 @@
+# ~/.config/starship.toml
+
+# Main prompt format
+format = """
+$username$hostname$directory$git_branch$git_status
+$character"""
+
+# Username config
+[username]
+format = "[$user]($style) "
+style_user = "blue bold"
+show_always = true
+
+[hostname]
+format = "at [$hostname]($style) "
+style = "green bold"
+ssh_only = false
+
+[directory]
+format = "in [$path]($style)[$read_only]($read_only_style) "
+style = "cyan bold"
+truncation_length = 3
+truncate_to_repo = true
+
+[character]
+success_symbol = "[❯](green bold)"
+error_symbol = "[❯](red bold)"
+
+[git_branch]
+format = "on [$branch]($style) "
+style = "purple bold"
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+style = "red bold"
+conflicted = "≠"
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+untracked = "?"
+stashed = "$"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+# Optional modules - uncomment to enable
+# [python]
+# format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+# symbol = "🐍 "
+# style = "yellow bold"
+
+# [nodejs]
+# format = "via [${symbol}(${version} )]($style)"
+# symbol = "⬢ "
+# style = "green bold"
+
+# [rust]
+# format = "via [${symbol}(${version} )]($style)"
+# symbol = "🦀 "
+# style = "red bold"
