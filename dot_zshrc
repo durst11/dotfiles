@@ -16,11 +16,6 @@ if [ -f ~/.aliasesrc ]; then
     source ~/.aliasesrc
 fi
 
-# Source Nix environment
-#if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-#  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-#fi
-
 if [ -e /home/jeremy/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jeremy/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # Initialize Starship

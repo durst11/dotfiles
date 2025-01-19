@@ -1,0 +1,33 @@
+#neofetch
+fastfetch
+
+#git
+
+# add zellij binaries to the PATH
+export PATH="/home/jeremy/.cargo/bin:$PATH"
+
+### ALIASES ###
+# navigation
+alias ..='cd ..'
+
+# FILE MANAGEMENT WITH PROMPTS
+alias mv='mv -i'          # Interactive move with confirmation prompt
+alias rm='rm -i'          # Interactive remove with confirmation prompt
+alias cp='cp -i'          # Interactive copy with confirmation prompt
+alias mkdir='mkdir -pv'   # Create directory with parent directories and verbose output
+
+
+
+
+# Changing "ls" to "eza"
+alias ls='eza -al --color=always --group-directories-first' # my preferred listing
+alias la='eza -a --color=always --group-directories-first'  # all files and dirs
+alias ll='eza -l --color=always --group-directories-first'  # long format
+alias lt='eza -aT --color=always --group-directories-first' # tree listing
+alias l.='eza -al --color=always --group-directories-first ../' # ls on the PARENT directory
+alias l..='eza -al --color=always --group-directories-first ../../' # ls on directory 2 levels up
+alias l...='eza -al --color=always --group-directories-first ../../../' # ls on directory 3 levels up
+
+# change your default USER shell
+alias tobash="sudo chsh $USER -s /bin/bash && echo 'Log out and log back in for change to take effect.'"
+alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Log out and log back in for change to take effect.'"
