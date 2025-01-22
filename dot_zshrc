@@ -38,6 +38,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# Set up fzf key bindings and fuzzy completion
+#source <(fzf --zsh)
 
 if [ -f ~/.aliasesrc ]; then
     source ~/.aliasesrc
