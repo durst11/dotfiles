@@ -1,0 +1,62 @@
+# ~/.config/starship/starship.toml
+
+# Main prompt format
+format = """
+$username\
+$hostname\
+$directory\
+$fill\
+$git_branch\
+$git_status\
+$linebreak
+$character"""
+
+# Username config
+[username]
+format = "[$user]($style) "
+style_user = "blue bold"
+show_always = true
+
+[hostname]
+format = "at [$hostname]($style) "
+style = "green bold"
+ssh_only = true
+
+[directory]
+format = "in [$path]($style)[$read_only]($read_only_style) "
+style = "cyan"
+#style = "bg:#445055 fg:#D3C6AA"
+truncation_length = 3
+truncate_to_repo = false
+truncation_symbol = ".../"
+repo_root_style = "green"
+
+[character]
+success_symbol = "[❯](green bold)"
+error_symbol = "[❯](red bold)"
+
+[git_branch]
+format = "on [$branch]($style) "
+style = "purple bold"
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+style = "red bold"
+conflicted = "≠"
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+untracked = "?"
+stashed = "$"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+[line_break]
+disabled = false
+
+[python]
+format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+symbol = "🐍 "
+style = "yellow bold"
