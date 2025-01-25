@@ -5,120 +5,126 @@ format = """
 $os\
 $username\
 $hostname\
-$directory\
+$directory[▶ ](bg:bg2 fg:fg)\
 $fill\
+$time\
+$python\
 $git_branch\
 $git_status\
 $linebreak
 $character"""
-palette = "everforest_hard"
+palette = 'everforest_hard'
 
 # Username config
 [username]
-format = "[$user ]($style)"
-style_root = "bg:bg2 fg:red"
-style_user = "bg:bg2 fg:fg"
+format = '[\[$user\]]($style)'
+style_root = 'bg:bg2 fg:red'
+style_user = 'bg:bg2 fg:fg'
 show_always = true
 #[username.aliases]
-#jeremy = "󰝴"
-#root = "󰱯"
+#jeremy = '󰝴'
+#root = '󰱯'
 
 [hostname]
-format = "at [$hostname]($style) "
-style = "green bold"
+format = 'at [$hostname]($style) '
+style = 'green bold'
 ssh_only = true
 
 [directory]
-format = "in [$path]($style)[$read_only]($read_only_style) "
-style = "bg:bg2 fg:gray0"
 truncation_length = 3
-fish_style_pwd_dir_length = 3
+format = '[ $path ]($style)[$read_only]($read_only_style)'
+style = 'bg:bg2 fg:gray0'
 truncate_to_repo = false
-truncation_symbol = ".../"
-repo_root_style = "fg:fg bg:bg2"
+truncation_symbol = ' .../'
+repo_root_style = 'fg:fg bg:bg2'
 
 [character]
-success_symbol = "[❯](green bold)"
-error_symbol = "[❯](red bold)"
+success_symbol = '[❯](green bold)'
+error_symbol = '[❯](red bold)'
+
+[time]
+format = '[\[ $time \]]($style) '
+time_format = '%T'
+disabled = false
 
 [git_branch]
-format = "on [$branch]($style) "
-style = "bg:bg2 fg:red bold"
+format = '[ $branch ]($style)'
+style = 'bg:bg2 fg:red bold'
 
 [git_status]
-format = '([$all_status$ahead_behind]($style) )'
-style = "bg:bg2 fg:red bold"
-conflicted = "≠"
-ahead = "⇡${count}"
-behind = "⇣"
-diverged = "⇕"
-untracked = "?"
-stashed = "$"
-modified = "!"
-staged = "+"
-renamed = "»"
-deleted = "✘"
+format = '([$all_status$ahead_behind ]($style))'
+style = 'bg:bg2 fg:red bold'
+conflicted = '≠'
+ahead = '⇡ ${count}'
+behind = '⇣'
+diverged = '⇕'
+untracked = '?'
+stashed = '$'
+modified = '!'
+staged = '+'
+renamed = '»'
+deleted = '✘'
 
 [line_break]
 disabled = false
 
 [python]
-format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-symbol = "🐍 "
-style = "yellow bold"
+format = '[- \[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )\]]($style)'
+symbol = '🐍 '
+style = 'yellow bold'
 
 [palettes.everforest_hard]
-bg_dim = "#1e2326"
-bg0 = "#272e33"
-bg1 = "#2e383c"
-bg2 = "#374145"
-bg3 = "#414b50"
-bg4 = "#495156"
-bg5 = "#4f5b58"
-bg_red = "#4c3743"
-bg_visual = "#493b40"
-bg_yellow = "#45443c"
-bg_green = "#3c4841"
-bg_blue = "#384b55"
-red = "#e67e80"
-orange = "#e69875"
-yellow = "#dbbc7f"
-green = "#a7c080"
-blue = "#7fbbb3"
-aqua = "#83c092"
-purple = "#d699b6"
-fg = "#d3c6aa"
-statusline1 = "#a7c080"
-statusline2 = "#d3c6aa"
-statusline3 = "#e67e80"
-gray0 = "#7a8478"
-gray1 = "#859289"
-gray2 = "#9da9a0"
+bg_dim = '#1e2326'
+bg0 = '#272e33'
+bg1 = '#2e383c'
+bg2 = '#374145'
+bg3 = '#414b50'
+bg4 = '#495156'
+bg5 = '#4f5b58'
+bg_red = '#4c3743'
+bg_visual = '#493b40'
+bg_yellow = '#45443c'
+bg_green = '#3c4841'
+bg_blue = '#384b55'
+red = '#e67e80'
+orange = '#e69875'
+yellow = '#dbbc7f'
+green = '#a7c080'
+blue = '#7fbbb3'
+aqua = '#83c092'
+purple = '#d699b6'
+fg = '#d3c6aa'
+statusline1 = '#a7c080'
+statusline2 = '#d3c6aa'
+statusline3 = '#e67e80'
+gray0 = '#7a8478'
+gray1 = '#859289'
+gray2 = '#9da9a0'
 
 [os]
 disabled = false
-format = "$symbol"
-style = ""
+format = '$symbol'
+style = ''
 
 [os.symbols]
-AlmaLinux = "[](fg:text bg:bg2)"
-Alpine = "[](fg:blue bg:bg2)"
-Android = "[](fg:green bg:bg2)"
-Arch = "[󰣇](fg:sapphire bg:bg2)"
-CentOS = "[](fg:mauve bg:bg2)"
-Debian = "[](fg:red bg:bg2)"
-DragonFly = "[](fg:teal bg:bg2)"
-EndeavourOS = "[](fg:mauve bg:bg2)"
-Fedora = "[](fg:blue bg:bg2)"
-Garuda = "[](fg:sapphire bg:bg2)"
-Kali = "[](fg:blue bg:bg2)"
-Linux = "[](fg:yellow bg:bg2)"
-Manjaro = "[](fg:green bg:bg2)"
-NixOS = "[](fg:bg_blue bg:bg2)"
-Pop = "[](fg:yellow bg:bg2)"
-Raspbian = "[](fg:maroon bg:bg2)"
-RedHatEnterprise = "[](fg:red bg:bg2)"
-Redhat = "[](fg:red bg:bg2)"
-Ubuntu = "[](fg:peach bg:bg2)"
-Unknown = "[](fg:text bg:bg2)"
-Windows = "[󰖳](fg:sky bg:bg2)"
+AlmaLinux = '[](fg:text bg:bg2)'
+Alpine = '[](fg:blue bg:bg2)'
+Android = '[](fg:green bg:bg2)'
+Arch = '[󰣇](fg:sapphire bg:bg2)'
+CentOS = '[](fg:mauve bg:bg2)'
+Debian = '[](fg:red bg:bg2)'
+DragonFly = '[](fg:teal bg:bg2)'
+EndeavourOS = '[](fg:mauve bg:bg2)'
+Fedora = '[](fg:blue bg:bg2)'
+Garuda = '[](fg:sapphire bg:bg2)'
+Kali = '[](fg:blue bg:bg2)'
+Linux = '[](fg:yellow bg:bg2)'
+Manjaro = '[](fg:green bg:bg2)'
+NixOS = '[](fg:bg_blue bg:bg2)'
+Pop = '[](fg:yellow bg:bg2)'
+Raspbian = '[](fg:maroon bg:bg2)'
+RedHatEnterprise = '[](fg:red bg:bg2)'
+Redhat = '[](fg:red bg:bg2)'
+Ubuntu = '[](fg:peach bg:bg2)'
+Unknown = '[](fg:text bg:bg2)'
+Windows = '[󰖳](fg:sky bg:bg2)'
