@@ -15,7 +15,7 @@ palette = "everforest_hard"
 
 # Username config
 [username]
-format = "[$user]($style) "
+format = "[$user ]($style)"
 style_root = "bg:bg2 fg:red"
 style_user = "bg:bg2 fg:fg"
 show_always = true
@@ -32,6 +32,7 @@ ssh_only = true
 format = "in [$path]($style)[$read_only]($read_only_style) "
 style = "bg:bg2 fg:gray0"
 truncation_length = 3
+fish_style_pwd_dir_length = 3
 truncate_to_repo = false
 truncation_symbol = ".../"
 repo_root_style = "fg:fg bg:bg2"
@@ -42,13 +43,13 @@ error_symbol = "[❯](red bold)"
 
 [git_branch]
 format = "on [$branch]($style) "
-style = "purple bold"
+style = "bg:bg2 fg:red bold"
 
 [git_status]
 format = '([$all_status$ahead_behind]($style) )'
 style = "bg:bg2 fg:red bold"
 conflicted = "≠"
-ahead = "⇡"
+ahead = "⇡${count}"
 behind = "⇣"
 diverged = "⇕"
 untracked = "?"
