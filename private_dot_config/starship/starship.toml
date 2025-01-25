@@ -46,7 +46,7 @@ style = "purple bold"
 
 [git_status]
 format = '([$all_status$ahead_behind]($style) )'
-style = "red bold"
+style = "bg:bg2 fg:red bold"
 conflicted = "≠"
 ahead = "⇡"
 behind = "⇣"
